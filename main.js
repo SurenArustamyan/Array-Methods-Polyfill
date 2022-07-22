@@ -153,7 +153,25 @@ Array.prototype.customJoin = function (separator = ",") {
 }
 
 
-// 12) Fill Method
+// 12) Slice Method
+
+Array.prototype.customSlice = function(start = 0, end = this.length){
+  let newArr = []
+  start = start < 0 ? this.length + start : start
+  end = end < 0 ? this.length + end : end
+  if(this.length > 0){
+    for(let i = start; i < end;i++){
+      if(i < this.length){
+        newArr.push(this[i])
+      }
+    }
+    return newArr
+  }
+  return newArr
+}
+
+
+// 13) Fill Method
 
 Array.prototype.customFill = function (value, start, end) {
   let o = this;
