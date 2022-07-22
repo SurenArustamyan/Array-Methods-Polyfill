@@ -142,11 +142,15 @@ Array.prototype.customReduce = function (callback, initialValue) {
 
 // 11) Join Method
 
-Array.prototype.customJoin = function () {
-  let myArray = this;
-  String(myArray);
-  return myString;
-};
+Array.prototype.customJoin = function (separator = ",") {
+  let result = '';
+    const { length } = this;
+    for(let i = 0; i < length - 1; i++){
+        result += (this[i] ?? '') + separator;
+    }
+    result += this[length - 1] ?? '';
+    return result;
+}
 
 
 // 12) Fill Method
